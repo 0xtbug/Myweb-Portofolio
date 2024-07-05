@@ -1,0 +1,28 @@
+/* Common styles for both modes */
+:root {
+    --text-lg: 1.125rem; /* 18px */
+    --text-2xl: 1.5rem; /* 24px */
+    --text-muted-lime: #A3D9A5; /* Softer lime color */
+    --font-bold: bold;
+}
+
+/* Project card styles */
+.project {
+    font-size: var(--text-lg);
+}
+
+.project h1 {
+    font-size: var(--text-2xl);
+    color: var(--text-muted-lime);
+    font-weight: var(--font-bold);
+}
+
+.project a {
+    color: var(--text-muted-lime);
+    text-decoration: underline;
+}
+
+.project p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

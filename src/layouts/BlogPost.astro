@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Tags from "../components/Tags.astro";
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import "../styles/blogpost.css";
+import { Icon } from 'astro-icon/components';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+const thisPost = (await getCollection("blog", ({ data }) => {
+  return data.title === title;
+}))[0];
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <!-- <Navbar /> -->
+    <main class="blog-post flex flex-col w-screen justify-center items-center">
+      <span class="flex flex-row items-center justify-self-start w-4/5 sm:w-1/2 text-light-gray text-lg my-4 gap-1">
+        <a class="breadcrumb" href="/blog">Blog</a>
+        <Icon class="inline" name="lucide:chevron-right" width={14} height={14} />
+        {thisPost.data.title}
+      </span>
+      <article class="flex flex-col w-4/5 sm:w-1/2 justify-center gap-5">
+        <h1 class="title">{title}</h1>
+        {(thisPost.data.heroImage && thisPost.data.heroAlt) && <Image src={thisPost.data.heroImage} alt={thisPost.data.heroAlt} />}
+        <FormattedDate date={pubDate} />
+        {
+          updatedDate && (
+            <div class="last-updated-on">
+              Last updated on <FormattedDate date={updatedDate} />
+            </div>
+          )
+        }
+        <Tags tags={tags} />
+        <hr />
+        <slot />
+        <div class="back-to-blog">
+          <a href="/blog" class="flex items-center text-blue-600 hover:text-blue-800">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to blog list
+          </a>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

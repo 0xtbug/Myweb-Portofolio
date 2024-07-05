@@ -1,0 +1,31 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+import TOC from '../../components/TOC.astro';
+import { addHeadingId, extractTocItems } from '../../utils/markdown';
+import type { TocItem } from '../../utils/markdown';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+
+// Deklarasikan tipe untuk tocItems
+let tocItems: TocItem[] = [];
+if (post.body) {
+  tocItems = extractTocItems(post.body);
+}
+---
+
+<BlogPost {...post.data}>
+  <TOC items={tocItems} />
+  <Content />
+</BlogPost>

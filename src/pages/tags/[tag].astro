@@ -1,0 +1,63 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+import "../../styles/global.css";
+import About from '../../components/About.astro';
+import Navbar from '../../components/Navbar.astro';
+import { Icon } from 'astro-icon/components';
+import TagsList from "../../components/TagsList.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection('blog');
+    const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
+	return uniqueTags.map((tag) => {
+		const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
+		return {
+			params: { tag },
+      		props: { posts: filteredPosts, allTags: uniqueTags },
+		};
+	});
+}
+
+const { tag } = Astro.params;
+const { posts, allTags } = Astro.props;
+const sortedPosts = posts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="w-screen flex flex-col items-center">
+		<Navbar />
+		<main class="w-4/5 sm:w-1/2">
+			<h1 class="text-6xl font-visitor">Blog</h1>
+			<About />
+			<TagsList tags={allTags} />
+			<h2 class="text-4xl font-visitor py-4">Posts</h2>
+			<span class="flex flex-row items-center justify-self-start w-4/5 sm:w-1/2 text-light-gray text-xl my-4 gap-1">
+				<a class="text-xl text-off-white hover:underline" href="/blog">Blog</a>
+				<Icon class="inline" name="lucide:chevron-right" width={14} height={14} />#{tag}
+			</span>
+			<section>
+				<ul class="flex flex-col gap-4 justify-center">
+					{
+						sortedPosts.map((post) => (
+							<li>
+								<BlogPostCard post={post}/>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

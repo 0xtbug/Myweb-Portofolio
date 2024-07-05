@@ -1,0 +1,12 @@
+---
+import FormattedDate from '../components/FormattedDate.astro';
+import Tags from "../components/Tags.astro";
+const { post } = Astro.props;
+---
+
+<div class="blog-post-card text-xl flex flex-col gap-2">
+    <b><a href={`/blog/${post.slug}/`}>{post.data.title}</a></b>
+    <FormattedDate date={post.data.pubDate} />
+    <p class="p-card">{post.data.description}</p>
+    <Tags tags={post.data.tags} />
+</div>

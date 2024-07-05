@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts.js';
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+import HeroPage from "../screens/HeroPage.astro";
+import AboutPage from "../screens/AboutPage.astro";
+import ProjectsPage from '../screens/ProjectsPage.astro';
+import Footer from "../components/Footer.astro";
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="overflow-x-hidden w-screen">
+        <Navbar />
+        <main class="h-screen overflow-auto">
+            <HeroPage />
+            <AboutPage />
+            <ProjectsPage />
+            <Footer />
+        </main>
+	</body>
+</html>

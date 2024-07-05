@@ -1,0 +1,120 @@
+@font-face {
+	font-family: 'Visitor';
+	font-display: swap;
+	font-weight: 400;
+	src: url(/src/assets/fonts/visitor1.ttf) format('truetype');
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	background-color: var(--bg-dark-gray);
+	color: var(--text-off-white);
+}
+
+/* Common styles */
+html {
+    --bg-project: #31363F;
+    --text-project: #EEEEEE;
+    --bg-dark-gray: #222831;
+    --text-off-white: #EEEEEE;
+    --text-muted-lime: #A3D9A5; /* Softer lime color */
+    --text-hover: #76ABAE;
+    --tag-bg: #31363F; /* Background for tags */
+    --tag-text: #A3D9A5; /* Text color for tags */
+}
+
+/* Dark mode styles */
+html {
+    background-color: var(--bg-dark-gray);
+    color: var(--text-off-white);
+}
+
+.nav-links a {
+    color: var(--text-off-white);
+}
+
+/* Project card styles */
+.project {
+    background-color: var(--bg-project);
+    color: var(--text-project);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.project a {
+    color: inherit; /* Ensure links match the text color */
+}
+
+.project a:hover {
+    color: var(--text-hover);
+}
+
+/* Specific styles for text, icon names, and borders */
+.project, 
+.icon-name, 
+.border-element {
+    color: var(--text-off-white); /* Ensuring text is visible in dark mode */
+    border-color: var(--text-off-white);
+}
+
+.project p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.6;
+}
+
+/* Class for muted lime text */
+.text-muted-lime {
+    color: var(--text-muted-lime);
+}
+
+.hover\:text-muted-lime:hover {
+    color: var(--text-muted-lime);
+}
+
+/* Header background style */
+.bg-dark {
+    background-color: var(--bg-dark-gray);
+}
+
+/* Blog post card styles */
+.blog-post-card {
+    background-color: var(--bg-project);
+    color: var(--text-project);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.blog-post-card a {
+    color: var(--text-muted-lime);
+    text-decoration: underline;
+}
+
+.blog-post-card a:hover {
+    color: var(--text-hover);
+}
+
+.blog-post-card .p-card {
+    font-size: 1rem;
+    color: var(--text-project);
+}
+
+/* Tag styles */
+.tag-item {
+    background-color: var(--tag-bg);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.tag-link {
+    color: var(--tag-text);
+    text-decoration: none;
+}
+
+.tag-link:hover {
+    color: var(--text-hover);
+    text-decoration: underline;
+}

@@ -1,0 +1,229 @@
+@font-face {
+	font-family: 'Visitor';
+	font-display: swap;
+	font-weight: 400;
+	src: url(/src/assets/fonts/visitor1.ttf) format('truetype');
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	background-color: var(--bg-dark-gray);
+	color: var(--text-off-white);
+}
+
+/* Common styles */
+html {
+    --bg-project: #31363F;
+    --text-project: #EEEEEE;
+    --bg-dark-gray: #222831;
+    --text-off-white: #EEEEEE;
+    --text-muted-lime: #A3D9A5; /* Softer lime color */
+    --text-hover: #76ABAE;
+    --text-light-gray: #999999;
+    --code-bg: #2d2d2d; /* Background for code blocks */
+    --code-text: #f8f8f2; /* Text color for code */
+    --code-border: #44475a; /* Border color for code */
+    --inline-code-bg: #44475a; /* Background for inline code */
+    --inline-code-text: #f8f8f2; /* Text color for inline code */
+    --bold-text: #ffffff; /* Color for bold text */
+}
+
+/* Blog post styles */
+.blog-post h1 {
+	font-size: 2.5rem; /* text-4xl */
+}
+
+.blog-post h2 {
+	font-size: 2rem; /* text-3xl */
+}
+
+.blog-post h3 {
+	font-size: 1.75rem; /* text-2xl */
+}
+
+.blog-post h4 {
+	font-size: 1.5rem; /* text-xl */
+}
+
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+	font-weight: bold;
+	color: var(--text-muted-lime); /* text-lime */
+}
+
+.blog-post .title {
+	font-size: 3rem; /* text-5xl */
+	font-family: 'Visitor', sans-serif;
+	color: var(--text-off-white);
+}
+
+.blog-post .breadcrumb {
+	font-size: 1.125rem; /* text-lg */
+	color: var(--text-off-white);
+	text-decoration: none;
+}
+
+.blog-post .breadcrumb:hover {
+	text-decoration: underline;
+}
+
+.blog-post strong,
+.blog-post b {
+	color: var(--bold-text); /* Bold text color */
+	font-weight: bold;
+}
+
+.blog-post a {
+	color: var(--text-muted-lime); /* text-lime */
+	font-size: 1.25rem; /* text-xl */
+	text-decoration: underline;
+}
+
+.blog-post nav a {
+	margin-right: 10px;
+}
+
+.blog-post textarea {
+	width: 100%;
+	font-size: 16px;
+}
+
+.blog-post input {
+	font-size: 16px;
+}
+
+.blog-post content {
+	line-height: 1.6;
+}
+
+.blog-post table {
+	width: 100%;
+	text-align: left;
+}
+
+.blog-post img {
+	max-width: 100%;
+	height: auto;
+}
+
+.blog-post code {
+	padding: 2px 5px;
+	background-color: var(--inline-code-bg); /* Use inline code background */
+	border-radius: 3px;
+	font-size: 1.125rem; /* text-lg */
+	color: var(--inline-code-text); /* Use inline code text color */
+}
+
+.blog-post pre {
+	padding: 1rem;
+	border-radius: 5px;
+	background-color: var(--code-bg);
+	color: var(--code-text);
+	border: 1px solid var(--code-border);
+	overflow-x: auto; /* Ensure horizontal scrolling for long code blocks */
+}
+
+.blog-post pre > code {
+	all: unset;
+}
+
+.blog-post blockquote {
+	border: 1px solid var(--text-light-gray);
+	background-color: #24292e;
+	margin: 0;
+	font-style: italic;
+	padding: 1rem; /* p-4 */
+}
+
+.blog-post .latex-inline {
+	display: inline;
+}
+
+.blog-post .latex-block {
+	display: block;
+}
+
+.blog-post .tag {
+	color: var(--text-light-gray);
+	margin: 0 0.25rem; /* space-x-2 */
+}
+
+.blog-post .tag-div {
+	margin: 0.5rem 0;
+}
+
+.blog-post p {
+	line-height: 1.75;
+	font-size: 1.25rem; /* text-xl */
+}
+
+.blog-post .katex {
+	color: #dedede;
+}
+
+.blog-post time {
+	display: block;
+	font-size: 1.25rem; /* text-xl */
+}
+
+/* TOC styles */
+nav.toc {
+	padding-left: 0;
+}
+
+nav.toc ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+nav.toc ul li {
+	position: relative;
+	margin-left: 20px; /* Space for the bullet */
+}
+
+nav.toc ul li::before {
+	content: "•";
+	position: absolute;
+	left: -20px;
+	color: var(--text-muted-lime); /* Softer lime color for bullets */
+	font-size: 1.5rem; /* Adjust bullet size if necessary */
+}
+
+/* About section */
+.about {
+	border-bottom: #50e762 solid 2px;
+	color: #dedede;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+.p-card {
+	margin: 0.5rem 0;
+}
+
+.back-to-blog {
+	margin-top: 2rem;
+	text-align: left;
+}
+
+.back-to-blog a {
+	display: inline-flex;
+	align-items: center;
+	font-size: 1rem;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.back-to-blog a:hover {
+	color: var(--text-hover);
+}
+
+.back-to-blog svg {
+	margin-right: 0.5rem;
+}
