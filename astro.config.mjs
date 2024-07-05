@@ -8,7 +8,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://localhost:4321/',
+  site: 'https://tubagusnm.dev/',
   integrations: [tailwind(), mdx(), sitemap(), icon({
     include: {
       lucide: ["github", "external-link", "linkedin", "chevron-right"],
