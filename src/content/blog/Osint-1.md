@@ -34,7 +34,7 @@ python -m sherlock username
 
 
 ## Real Case
-Pada real case ini saya mencontohkan pada akun instagram shakiraamirah, saya ingin mencari username social media lainnya dengan username instagram tersebut.
+Pada real case ini saya mencontohkan pada akun instagram `shakiraamirah`, saya ingin mencari username social media lainnya dengan username instagram tersebut.
 
 ![](../../assets/20240706011444.png)
 
@@ -66,7 +66,7 @@ Dapat di lihat hasil pencariannya cukup menarik 🗿
 > **CATATAN**: Username yang dicari belum tentu milik orang yang sama bisa saja milik orang lain.
 
 # Tambahan
-Jika dirasa sulit untuk melakukan penginstallan dan lainnya, berikut beberapa list website untuk mengecekan username versi website:
+Jika dirasa sulit untuk melakukan penginstallan dan lainnya, berikut beberapa list website untuk pengecekan username social medianya versi website:
 
 ```
 - whatsmyname.app
@@ -76,7 +76,7 @@ Jika dirasa sulit untuk melakukan penginstallan dan lainnya, berikut beberapa li
 # Kesimpulan
 Artikel ini disusun untuk tujuan edukasi semata. OSINT (Open Source Intelligence) adalah metode yang kuat untuk mengumpulkan informasi dari sumber publik. Dalam praktiknya, OSINT menggunakan berbagai tools untuk mengotomatisasi proses pengumpulan data dan memberikan wawasan yang mendalam. Salah satu tools yang sederhana dan populer adalah Sharelock, yang memungkinkan kita untuk mencari username di berbagai platform sosial media dan situs web lainnya. 
 
-Melalui contoh real case menggunakan username "shakiraamirah", kita bisa melihat bagaimana Sharelock dapat mengidentifikasi keberadaan username tersebut di berbagai situs. Hasil pencarian ini dapat berguna untuk berbagai tujuan seperti keamanan siber, investigasi penegakan hukum, atau pengecekan keberadaan digital seseorang.
+Melalui contoh real case menggunakan username `shakiraamirah`, kita bisa melihat bagaimana Sharelock dapat mengidentifikasi keberadaan username tersebut di berbagai situs. Hasil pencarian ini dapat berguna untuk berbagai tujuan seperti keamanan siber, investigasi penegakan hukum, atau pengecekan keberadaan digital seseorang.
 
 Penting untuk selalu memperhatikan etika dan legalitas dalam pengumpulan dan penggunaan informasi melalui OSINT. Data yang ditemukan belum tentu milik orang yang sama dan harus diperlakukan dengan hati-hati untuk menghindari kesalahan identifikasi.
 
