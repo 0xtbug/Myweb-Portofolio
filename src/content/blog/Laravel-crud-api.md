@@ -57,7 +57,7 @@ return new class extends Migration
 ```
 
 ```Catatan:```
-Sebelum menjalankan, edit konfigurasi Database di `.env`
+Sebelum menjalankan migrate, pastikan sudah menjalankan xampp/laragon terlebih dahulu lalu edit konfigurasi Database di `.env` samakan nama databasenya.
 
 Jalankan migrasi
 ```bash
@@ -171,5 +171,9 @@ class MahasiswaController extends Controller
 ```bash
 php artisan serve
 ```
+## Test API
+Untuk pengetesan API bisa menggunakan Postman atau alternatif lainnya. Contoh menggunakan Insomnia
+![Get-Mahasiswa](../../assets/get-mhs.png)
+
 # Kesimpulan
 API yang dibahas dalam artikel ini sangat cocok digunakan untuk keperluan pengujian atau belajar, namun tidak disarankan untuk digunakan dalam proyek yang akan diterapkan di lingkungan produksi.
