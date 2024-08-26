@@ -15,7 +15,7 @@ install project
 ```bash
 composer create-project --prefer-dist laravel/laravel api
 ```
-## Buat Model & Migrasi
+## Buat Model, Migrasi, Controller
 Buat model, migrasi, controller
 ```bash
 php artisan make:model Mahasiswa -mcr
