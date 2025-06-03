@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = 'Tubagus Portfolio';
 export const SITE_DESCRIPTION = 'Welcome to my portfolio!';
+export const GITHUB_USERNAME = '0xtbug';

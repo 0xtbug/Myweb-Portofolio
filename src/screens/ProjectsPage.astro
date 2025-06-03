@@ -1,6 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import ProjectCard from "../components/ProjectCard.astro";
+import "../styles/global.css";
+import { GITHUB_USERNAME } from "../consts";
+
 const projects = await getCollection('projects');
 ---
 <section class="flex flex-col items-center w-full gap-5 justify-center" id="projects">
@@ -13,5 +16,10 @@ const projects = await getCollection('projects');
                 )
             })
         }
+    </div>
+    <div class="flex justify-center">
+        <button class="bg-lime-100 px-4 py-2 rounded-md hover:bg-lime-200 mt-2">
+            <a href={`https://github.com/${GITHUB_USERNAME}?tab=repositories`} class="text-gray-700 font-semi-bold font-visitor">View All Projects</a>
+        </button>
     </div>
 </section>
